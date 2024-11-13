@@ -28,7 +28,7 @@ public class EmailService {
 
 	@Value("${mail.password}")
 	private String password;
-	
+
 	public void sendMail() throws AddressException, MessagingException, IOException {
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
@@ -41,6 +41,7 @@ public class EmailService {
 				return new PasswordAuthentication(email, password);
 			}
 		});
+
 		Message msg = new MimeMessage(session);
 		msg.setFrom(new InternetAddress("testemail@gmail.com", false));
 
