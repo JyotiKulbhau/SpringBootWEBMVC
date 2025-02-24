@@ -19,11 +19,6 @@ public class UserService {
 		return "User added successfully...";
 	};	
 	
-	public String addUserbyView(User user) {
-		repo.save(user);
-        return "redirect:/viewc/";
-	};	
-	
 	
 	public Optional<User> updateUserbyId(int id,String name) {
 		 User user=repo.findById(id).orElseThrow();
